@@ -12,10 +12,10 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-printf 'This will create a app with eslint, prettier, nodemon and typescript setup\n' | lolcat
+printf 'This will create a app with eslint, prettier, nodemon and typescript setup\n' 
 
 QUIET=false
-CONF_DIR_PATH=$(realpath 'config')
+CONF_DIR_PATH=$(realpath '~/.local/share/setup-typescript-app/config')
 DEST_DIR_PATH=$(realpath $1)
 
 if [[ $2 == '-q' || $2 == '--quiet' ]]; then
@@ -23,12 +23,12 @@ if [[ $2 == '-q' || $2 == '--quiet' ]]; then
 fi
 
 if [ ! -d "$DEST_DIR_PATH" ]; then 
-  printf "# Creating directory\n" | lolcat
+  printf "# Creating directory\n" 
   mkdir -p $DEST_DIR_PATH
 fi
 
 
-printf "# Coping all config files in your app \n" | lolcat
+printf "# Coping all config files in your app \n" 
 for file in "$CONF_DIR_PATH"/* "$CONF_DIR_PATH"/.*; do
 
   filename=$(basename "$file")
@@ -44,12 +44,12 @@ for file in "$CONF_DIR_PATH"/* "$CONF_DIR_PATH"/.*; do
   cp -r $file $DEST_DIR_PATH
 done
 
-printf "# Installing packages\n" | lolcat
+printf "# Installing packages\n" 
 if [[ $QUIET == false ]]; then
   (cd $DEST_DIR_PATH && pnpm install)
 else
   (cd $DEST_DIR_PATH && pnpm install 2>/dev/null 1>/dev/null)
 fi
 
-printf "# Running the app\n" | lolcat
+printf "# Running the app\n" 
 (cd $DEST_DIR_PATH && pnpm start)
