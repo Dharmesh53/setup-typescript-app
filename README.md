@@ -37,4 +37,4 @@ setup-typescript-app ~/Workspace/express-app -q
 
 
 ## For now the installer will only work on LINUX.
-
+Make sure you have small dependencies like `realpath, basename, whoami` is installed in your machine.
