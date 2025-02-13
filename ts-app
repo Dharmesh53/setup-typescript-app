@@ -15,7 +15,7 @@ fi
 printf 'This will create a app with eslint, prettier, nodemon and typescript setup\n' 
 
 QUIET=false
-CONF_DIR_PATH=$(realpath "/home/$(whoami)/.local/share/setup-typescript-app/config")
+CONF_DIR_PATH=$(realpath "/home/$(whoami)/.local/share/ts-app/config")
 DEST_DIR_PATH=$(realpath $1)
 
 if [[ $2 == '-q' || $2 == '--quiet' ]]; then
