@@ -11,30 +11,27 @@ What it does ??
 
 - Copies the config folder to `~/.local/share`.
 
-Ensure `~/.local/bin` is included in your PATH environment variable.
-
-Add this line to your shell configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
+- Adds this line to your shell configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
 ```bash
-export PATH="/home/{username}/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 Replace {username} with your actual username. After saving, reload your shell configuration.
 
 Once set up, you can use the script from anywhere like this:
 ```bash
-setup-typescript-app express-app
+ts-app express-app
 ```
 
 It will create a directory `express-app` where you called the script, other than that you can give it any other path.
 ```bash
-setup-typescript-app ~/Workspace/express-app
+ts-app ~/Workspace/express-app
 ```
 
 You can also use `--quiet` or `-q` to hide the logs.
 ```bash
-setup-typescript-app ~/Workspace/express-app -q
+ts-app -q ~/Workspace/express-app
 ```
 
-
-## For now the installer will only work on LINUX.
-Make sure you have small dependencies like `realpath, basename, whoami` is installed in your machine.
+## For now the script will only work on UNIX-like systems.
+Make sure you have basic dependencies like `node, npm, realpath, basename` is installed in your machine.
